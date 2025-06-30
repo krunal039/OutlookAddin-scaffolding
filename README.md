@@ -40,12 +40,12 @@ This will generate and trust a local HTTPS certificate.
 ```sh
 npm start
 ```
-By default, the app runs at `https://localhost:3000`.
+By default, the app runs at `https://localhost:3001`.
 
 ### 5. Verify icons and app are served
 Open in your browser:
-- `https://localhost:3000/index.html`
-- `https://localhost:3000/assets/icon-32.png`
+- `https://localhost:3001/index.html`
+- `https://localhost:3001/assets/icon-32.png`
 
 If you see a security warning, proceed and trust the certificate.
 
@@ -59,7 +59,7 @@ If you see a security warning, proceed and trust the certificate.
 ## Troubleshooting
 
 ### Port Already in Use
-If you see `EADDRINUSE: address already in use :::3000`:
+If you see `EADDRINUSE: address already in use :::3001`:
 ```sh
 npm run kill-ports
 ```
@@ -79,7 +79,7 @@ npm start
 ### Manifest Errors
 - Ensure `src/manifest.xml` uses the correct schema (see sample in repo)
 - The `Id` must be a valid GUID and an attribute on `<OfficeApp>`
-- All URLs should use `https://localhost:3000` (or your chosen port)
+- All URLs should use `https://localhost:3001` (or your chosen port)
 - Icons must exist in `public/assets/` and be valid PNG files
 
 ### Sideloading Rejected by Exchange
