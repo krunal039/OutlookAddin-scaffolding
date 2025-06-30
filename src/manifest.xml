@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xsi:type="MailApp"
+           Id="b7e2e1c2-2e2a-4b7e-9c1a-7e2e1c2a4b7e"
+           Version="1.0.0.0"
+           ProviderName="MunichRe"
+           DefaultLocale="en-GB"
+           DisplayName="Send to Workbench"
+           Description="Send selected email to Workbench."
+           SupportUrl="https://yourcompany.com/support">
+
+  <Hosts>
+    <Host Name="Mailbox" />
+  </Hosts>
+
+  <Requirements>
+    <Sets DefaultMinVersion="1.5">
+      <Set Name="Mailbox" />
+    </Sets>
+  </Requirements>
+
+  <FormSettings>
+    <Form xsi:type="ItemRead">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://localhost:3000/index.html" />
+        <RequestedHeight>250</RequestedHeight>
+      </DesktopSettings>
+      <TabletSettings>
+        <SourceLocation DefaultValue="https://localhost:3000/index.html" />
+        <RequestedHeight>250</RequestedHeight>
+      </TabletSettings>
+      <PhoneSettings>
+        <SourceLocation DefaultValue="https://localhost:3000/index.html" />
+        <RequestedHeight>250</RequestedHeight>
+      </PhoneSettings>
+    </Form>
+  </FormSettings>
+
+  <ExtensionPoint xsi:type="MessageReadCommandSurface">
+    <OfficeTab id="TabDefault">
+      <Group id="msgReadWorkbenchGroup">
+        <Label resid="groupLabel" />
+        <Control xsi:type="Button" id="msgReadSendToWorkbenchButton">
+          <Label resid="buttonLabel" />
+          <Supertip>
+            <Title resid="buttonLabel" />
+            <Description resid="buttonDesc" />
+          </Supertip>
+          <Icon>
+            <bt:Image size="16" resid="icon16" />
+            <bt:Image size="32" resid="icon32" />
+            <bt:Image size="80" resid="icon80" />
+          </Icon>
+          <Action xsi:type="ShowTaskpane">
+            <SourceLocation resid="taskpaneUrl" />
+          </Action>
+        </Control>
+      </Group>
+    </OfficeTab>
+  </ExtensionPoint>
+
+  <Resources>
+    <bt:Images>
+      <bt:Image id="icon16" DefaultValue="https://localhost:3000/assets/icon-16.png" />
+      <bt:Image id="icon32" DefaultValue="https://localhost:3000/assets/icon-32.png" />
+      <bt:Image id="icon80" DefaultValue="https://localhost:3000/assets/icon-80.png" />
+    </bt:Images>
+    <bt:Urls>
+      <bt:Url id="taskpaneUrl" DefaultValue="https://localhost:3000/index.html" />
+    </bt:Urls>
+    <bt:ShortStrings>
+      <bt:String id="groupLabel" DefaultValue="Workbench" />
+      <bt:String id="buttonLabel" DefaultValue="Send to Workbench" />
+    </bt:ShortStrings>
+    <bt:LongStrings>
+      <bt:String id="buttonDesc" DefaultValue="Send this email to Workbench." />
+    </bt:LongStrings>
+  </Resources>
+
+  <Permissions>ReadItem</Permissions>
+</OfficeApp>
