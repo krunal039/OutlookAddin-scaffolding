@@ -50,8 +50,8 @@ Open in your browser:
 If you see a security warning, proceed and trust the certificate.
 
 ### 6. Sideload the add-in in Outlook
-1. Open Outlook Web (https://outlook.office.com/)
-2. Go to **Settings > Manage add-ins** (or **My Add-ins**)
+1. Open [Outlook Web (https://outlook.office.com/)
+2. Go to **Settings > Manage add-ins** (or **My Add-ins**)](https://aka.ms/olksideload)
 3. Click **Add a custom add-in > Add from file**
 4. Select `src/manifest.xml`
 5. The add-in will appear in your Outlook ribbon
