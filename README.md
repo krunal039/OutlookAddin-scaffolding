@@ -40,26 +40,25 @@ This will generate and trust a local HTTPS certificate.
 ```sh
 npm start
 ```
-By default, the app runs at `https://localhost:3000`.
+By default, the app runs at `https://localhost:3001`.
 
 ### 5. Verify icons and app are served
 Open in your browser:
-- `https://localhost:3000/index.html`
-- `https://localhost:3000/assets/icon-32.png`
+- `https://localhost:3001/index.html`
+- `https://localhost:3001/assets/icon-32.png`
 
 If you see a security warning, proceed and trust the certificate.
 
 ### 6. Sideload the add-in in Outlook
-1. Open Outlook Web (https://outlook.office.com/)
-2. Go to **Settings > Manage add-ins** (or **My Add-ins**)
-3. Click **Add a custom add-in > Add from file**
-4. Select `src/manifest.xml`
-5. The add-in will appear in your Outlook ribbon
+1. Open (https://aka.ms/olksideload)
+2. Click **Add a custom add-in > Add from file**
+3. Select `src/manifest.xml`
+4. The add-in will appear in your Outlook ribbon
 
 ## Troubleshooting
 
 ### Port Already in Use
-If you see `EADDRINUSE: address already in use :::3000`:
+If you see `EADDRINUSE: address already in use :::3001`:
 ```sh
 npm run kill-ports
 ```
@@ -79,7 +78,7 @@ npm start
 ### Manifest Errors
 - Ensure `src/manifest.xml` uses the correct schema (see sample in repo)
 - The `Id` must be a valid GUID and an attribute on `<OfficeApp>`
-- All URLs should use `https://localhost:3000` (or your chosen port)
+- All URLs should use `https://localhost:3001` (or your chosen port)
 - Icons must exist in `public/assets/` and be valid PNG files
 
 ### Sideloading Rejected by Exchange
