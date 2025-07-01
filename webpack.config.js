@@ -1,5 +1,19 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const fs = require('fs');
+
+// Try to use office-addin-dev-certs if available, otherwise fall back to basic HTTPS
+let httpsOptions = true;
+try {
+  const devCerts = require('office-addin-dev-certs');
+  // Check if certificates exist
+  const certPath = require('os').homedir() + '/.office-addin-dev-certs/localhost.crt';
+  if (fs.existsSync(certPath)) {
+    httpsOptions = devCerts.getHttpsServerOptions();
+  }
+} catch (error) {
+  console.log('Office add-in dev certificates not available, using basic HTTPS');
+}
 
 module.exports = {
   entry: './src/index.tsx',
@@ -36,7 +50,7 @@ module.exports = {
     port: 3001,
     open: true,
     hot: true,
-    https: true,
+    https: httpsOptions,
   },
   mode: 'development',
 }; 
